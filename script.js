@@ -93,6 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // ===== Counter animation for hero stats =====
   function animateCounter(element, target) {
     let current = 0;
+    const suffix = element.textContent.replace(/[0-9]/g, '');
     const increment = target / 60;
     const timer = setInterval(() => {
       current += increment;
@@ -100,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
         current = target;
         clearInterval(timer);
       }
-      element.textContent = Math.floor(current) + '+';
+      element.textContent = Math.floor(current) + suffix;
     }, 25);
   }
 
